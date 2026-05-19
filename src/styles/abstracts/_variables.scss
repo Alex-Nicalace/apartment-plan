@@ -1,0 +1,12 @@
+@use '../abstracts/functions' as *;
+
+:root {
+  --color-page: #f3f3f0;
+  --color-wall: #1f1f1f;
+  --color-text: #151515;
+
+  --font-primary: Arial, Helvetica, sans-serif;
+  --plan-max-width: #{rem(880)};
+  --plan-ratio: 1 / 1;
+  --wall-size: #{rem(16)};
+}

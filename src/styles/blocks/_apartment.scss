@@ -1,0 +1,11 @@
+@use '../abstracts/functions' as *;
+
+.apartment {
+  width: min(100%, var(--plan-max-width));
+
+  &__title {
+    font-size: clamp(rem(22), 4vw, rem(32));
+    line-height: 1.15;
+    text-align: center;
+  }
+}
