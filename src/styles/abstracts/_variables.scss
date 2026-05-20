@@ -2,11 +2,13 @@
 
 :root {
   --color-page: #f3f3f0;
-  --color-wall: #1f1f1f;
+  --color-wall: #151716;
+  --color-wall-fill: #777b76;
   --color-text: #151515;
 
   --font-primary: Arial, Helvetica, sans-serif;
   --plan-max-width: #{rem(880)};
   --plan-ratio: 1 / 1;
-  --wall-size: #{rem(16)};
+  --wall-size: #{percent(19, 420)};
+  --wall-border-size: #{rem(2)};
 }
