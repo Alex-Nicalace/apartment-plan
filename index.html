@@ -12,13 +12,28 @@
         <h1 class="apartment__title">3-х комнатная квартира - 130 кв.м.</h1>
 
         <div class="floor-plan" aria-label="План квартиры">
-          <div class="floor-plan__wall floor-plan__wall_top">
-            <div class="floor-plan__window floor-plan__window_top-left"></div>
-            <div class="floor-plan__window floor-plan__window_top-right"></div>
-            <div class="floor-plan__door floor-plan__door_balcony-top"></div>
+          <div class="wall floor-plan__wall" style="--wall-left: 0">
+            <div
+              class="wall__window"
+              style="--position: 15.78%; --length: 15.78%"
+            ></div>
+            <div
+              class="wall__window"
+              style="--position: 65.78%; --length: 15.78%"
+            ></div>
+            <div
+              class="wall__door"
+              style="--position: 60.52%; --length: 5.26%"
+            ></div>
           </div>
-          <div class="floor-plan__wall floor-plan__wall_right">
-            <div class="floor-plan__window"></div>
+          <div
+            class="wall wall_vertical floor-plan__wall"
+            style="--wall-right: 0"
+          >
+            <div
+              class="wall__window"
+              style="--position: 15.78%; --length: 15.78%"
+            ></div>
           </div>
         </div>
       </section>

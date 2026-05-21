@@ -1,0 +1,96 @@
+@use '../abstracts/functions' as *;
+
+.wall {
+  position: relative;
+  height: var(--wall-width);
+  width: var(--wall-length, 100%);
+  background-color: var(--color-wall-fill);
+  border: var(--wall-border-size) solid var(--color-wall);
+
+  &__window,
+  &__door {
+    position: absolute;
+    height: 100%;
+    left: var(--position);
+    width: var(--length);
+    background-color: var(--color-page);
+    border: var(--wall-border-size) solid var(--color-wall);
+    border-top: none;
+    border-bottom: none;
+  }
+
+  &__window {
+    --window-gap: calc(
+      (100% - var(--wall-border-size) - var(--wall-border-size)) / 3
+    );
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      height: var(--wall-border-size);
+      width: 100%;
+      background-color: var(--color-wall);
+    }
+
+    &::before {
+      top: var(--window-gap);
+    }
+
+    &::after {
+      top: calc(
+        var(--window-gap) + var(--window-gap) + var(--wall-border-size)
+      );
+    }
+  }
+
+  &__door {
+    &::before {
+      content: '';
+      position: absolute;
+      height: percent(30, 19);
+      width: var(--wall-border-size);
+      background-color: var(--color-wall);
+      left: 50%;
+      transform: translate(-50%, -18%);
+    }
+  }
+
+  &_vertical {
+    width: var(--wall-width);
+    height: var(--wall-length, 100%);
+
+    .wall {
+      &__window,
+      &__door {
+        height: var(--length);
+        left: 0;
+        top: var(--position);
+        width: 100%;
+        border: var(--wall-border-size) solid var(--color-wall);
+        border-left: none;
+        border-right: none;
+      }
+
+      &__window {
+        &::before,
+        &::after {
+          width: var(--wall-border-size);
+          height: 100%;
+        }
+
+        &::before {
+          top: auto;
+          left: var(--window-gap);
+        }
+
+        &::after {
+          top: auto;
+          left: calc(
+            var(--window-gap) + var(--window-gap) + var(--wall-border-size)
+          );
+        }
+      }
+    }
+  }
+}
