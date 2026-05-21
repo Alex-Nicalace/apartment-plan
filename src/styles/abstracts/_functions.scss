@@ -1,11 +1,29 @@
 @use 'sass:math';
+@use 'sass:string';
 
 @function percent($px, $from) {
   $result: math.div($px, $from) * 100%;
   @return $result;
 }
 
-@function rem($px) {
-  $result: math.div($px, 16) * 1rem;
-  @return $result;
+@function rem($px, $base: 16px) {
+  @if math.is-unitless($px) {
+    $px: $px * 1px;
+  }
+
+  @if math.is-unitless($base) {
+    $base: $base * 1px;
+  }
+
+  @return math.div($px, $base) * 1rem;
+}
+
+@function fluid-clamp($min-size, $max-size, $min-width: 320, $max-width: 1920) {
+  // Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  $slope: math.div($max-size - $min-size, $max-width - $min-width);
+  $intersection: $min-size - $min-width * $slope;
+
+  @return string.unquote(
+    'clamp(#{rem($min-size)}, #{rem($intersection)} + #{$slope * 100}vw, #{rem($max-size)})'
+  );
 }
