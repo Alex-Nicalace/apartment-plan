@@ -1,7 +1,6 @@
 @use '../abstracts/functions' as *;
 
 .floor-plan {
-  $wall-length: 380;
   position: relative;
   aspect-ratio: var(--plan-ratio);
 

@@ -56,9 +56,112 @@
     }
   }
 
+  &_join {
+    &_start::before,
+    &_end::after {
+      content: '';
+      position: absolute;
+      height: var(--wall-width);
+      width: calc(var(--wall-width) - var(--wall-border-size));
+      background-color: var(--color-wall-fill);
+      border: var(--wall-border-size) solid var(--color-wall);
+      z-index: 1;
+      --join-offset: calc(var(--wall-border-size) * -1);
+    }
+
+    &_start {
+      &::before {
+        top: var(--join-offset);
+        left: var(--join-offset);
+        border-right: none;
+      }
+    }
+
+    &_end {
+      &::after {
+        top: var(--join-offset);
+        right: var(--join-offset);
+        border-left: none;
+      }
+    }
+  }
+
+  &_join-start-open {
+    &_top::before {
+      border-top: none;
+    }
+    &_bottom::before {
+      border-bottom: none;
+    }
+    &_left::before {
+      border-left: none;
+    }
+  }
+
+  &_join-end-open {
+    &_top::after {
+      border-top: none;
+    }
+    &_bottom::after {
+      border-bottom: none;
+    }
+    &_right::after {
+      border-right: none;
+    }
+  }
+
   &_vertical {
     width: var(--wall-width);
     height: var(--wall-length, 100%);
+
+    &.wall {
+      &_join {
+        &_start::before,
+        &_end::after {
+          width: var(--wall-width);
+          height: calc(var(--wall-width) - var(--wall-border-size));
+          border: var(--wall-border-size) solid var(--color-wall);
+        }
+
+        &_start {
+          &::before {
+            border-bottom: none;
+          }
+        }
+
+        &_end {
+          &::after {
+            bottom: var(--join-offset);
+            left: var(--join-offset);
+            border-top: none;
+          }
+        }
+      }
+
+      &_join-start-open {
+        &_top::before {
+          border-top: none;
+        }
+        &_right::before {
+          border-right: none;
+        }
+        &_left::before {
+          border-left: none;
+        }
+      }
+
+      &_join-end-open {
+        &_left::after {
+          border-left: none;
+        }
+        &_bottom::after {
+          border-bottom: none;
+        }
+        &_right::after {
+          border-right: none;
+        }
+      }
+    }
 
     .wall {
       &__window,
