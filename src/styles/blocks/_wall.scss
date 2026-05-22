@@ -152,9 +152,21 @@
     &_partition {
     }
     &_glass {
+      --wall-width: var(--wall-width-glass);
+      background-color: var(--color-opening);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        height: var(--wall-border-size);
+        width: 100%;
+        background-color: var(--color-wall);
+      }
     }
     &_railing {
-      // height: var(--wall-width);
       --wall-width: var(--wall-width-railing);
       background-color: var(--color-opening);
     }
@@ -210,6 +222,18 @@
         }
         &_right::after {
           border-right: none;
+        }
+      }
+
+      &_type {
+        &_glass {
+          &::before {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--wall-border-size);
+            height: 100%;
+          }
         }
       }
     }

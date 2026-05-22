@@ -19,5 +19,9 @@
       $wall-design-width-railing,
       scale-to-max($wall-design-width-railing)
     )};
+  --wall-width-glass: #{fluid-clamp(
+      $wall-design-width-glass,
+      scale-to-max($wall-design-width-glass)
+    )};
   --wall-border-size: #{rem(2)};
 }
