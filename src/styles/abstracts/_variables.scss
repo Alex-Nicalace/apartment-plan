@@ -1,5 +1,8 @@
 @use '../abstracts/functions' as *;
 
+$wall-design-width: 19;
+$wall-design-length: 380;
+
 :root {
   --color-page: #f3f3f0;
   --color-wall: #151716;

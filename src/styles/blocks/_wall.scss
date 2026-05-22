@@ -1,4 +1,5 @@
 @use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
 
 .wall {
   position: relative;
@@ -6,6 +7,33 @@
   width: var(--wall-length, 100%);
   background-color: var(--color-wall-fill);
   border: var(--wall-border-size) solid var(--color-wall);
+
+  &__air-shaft {
+    display: flex;
+    position: absolute;
+    height: percent(8, $wall-design-width);
+    aspect-ratio: 3/1;
+    top: 50%;
+    left: var(--position);
+    transform: translateY(-50%);
+    background-color: var(--color-wall);
+
+    span {
+      flex: 1;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      &::before,
+      &::after {
+        content: '';
+        aspect-ratio: 1 / 1;
+        flex: 0 0 percent(2, 8);
+        border-radius: 50%;
+        background-color: var(--color-page);
+      }
+    }
+  }
 
   &__window,
   &__door {
@@ -57,7 +85,7 @@
     &::before {
       content: '';
       position: absolute;
-      height: percent(30, 19);
+      height: percent(30, $wall-design-width);
       width: var(--wall-border-size);
       background-color: var(--color-wall);
       left: 50%;
@@ -140,6 +168,7 @@
 
         &_end {
           &::after {
+            top: auto;
             bottom: var(--join-offset);
             left: var(--join-offset);
             border-top: none;
@@ -215,11 +244,31 @@
 
       &__door {
         &::before {
-          width: percent(30, 19);
+          width: percent(30, $wall-design-width);
           height: var(--wall-border-size);
           left: 0;
           top: 50%;
           transform: translate(-18%, -50%);
+        }
+      }
+
+      &__air-shaft {
+        width: percent(8, $wall-design-width);
+        height: auto;
+        aspect-ratio: 1/3;
+        left: 50%;
+        top: var(--position);
+        transform: translate(-50%, 0);
+        flex-direction: column;
+
+        span {
+          flex-direction: column;
+
+          &::before,
+          &::after {
+            flex: 0 0 percent(2, 8);
+            background-color: var(--color-page);
+          }
         }
       }
     }
