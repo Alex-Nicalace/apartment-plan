@@ -27,4 +27,12 @@
     width: percent(200, $plan-design-size);
     height: percent(40, $plan-design-size);
   }
+
+  &__balcony-glazed {
+    position: absolute;
+    bottom: 0;
+    right: var(--wall-border-size);
+    width: percent(40, $plan-design-size);
+    height: percent(230, $plan-design-size);
+  }
 }
