@@ -7,6 +7,7 @@
   --color-wall: #151716;
   --color-wall-fill: #777b76;
   --color-text: #151515;
+  --color-room: #e5e5e5;
 
   --font-primary: Arial, Helvetica, sans-serif;
   --plan-max-width: #{rem($plan-max-width)};
@@ -22,6 +23,10 @@
   --wall-width-glass: #{fluid-clamp(
       $wall-design-width-glass,
       scale-to-max($wall-design-width-glass)
+    )};
+  --wall-width-partition: #{fluid-clamp(
+      $wall-design-width-partition,
+      scale-to-max($wall-design-width-partition)
     )};
   --wall-border-size: #{rem(2)};
 }

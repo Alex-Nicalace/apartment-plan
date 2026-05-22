@@ -3,10 +3,11 @@
 
 .wall {
   --wall-width: var(--wall-width-main);
+  --wall-color: var(--color-wall-fill);
   position: relative;
   height: var(--wall-width);
   width: var(--wall-length, 100%);
-  background-color: var(--color-wall-fill);
+  background-color: var(--wall-color);
   border: var(--wall-border-size) solid var(--color-wall);
 
   &__air-shaft {
@@ -91,6 +92,7 @@
       background-color: var(--color-wall);
       left: 50%;
       transform: translate(-50%, -18%);
+      z-index: 1;
     }
   }
 
@@ -101,7 +103,7 @@
       position: absolute;
       height: var(--wall-width);
       width: calc(var(--wall-width) - var(--wall-border-size));
-      background-color: var(--color-wall-fill);
+      background-color: var(--wall-color);
       border: var(--wall-border-size) solid var(--color-wall);
       z-index: 1;
       --join-offset: calc(var(--wall-border-size) * -1);
@@ -150,10 +152,12 @@
 
   &_type {
     &_partition {
+      --wall-width: var(--wall-width-partition);
+      --wall-color: var(--color-opening);
     }
     &_glass {
       --wall-width: var(--wall-width-glass);
-      background-color: var(--color-opening);
+      --wall-color: var(--color-opening);
 
       &::before {
         content: '';
