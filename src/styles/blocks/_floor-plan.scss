@@ -1,8 +1,16 @@
 @use '../abstracts/functions' as *;
+@use '../abstracts/settings' as *;
 
 .floor-plan {
   position: relative;
   aspect-ratio: var(--plan-ratio);
+
+  &__inner {
+    position: absolute;
+    bottom: 0;
+    aspect-ratio: var(--plan-ratio);
+    width: percent($apartment-design-size, $plan-design-size);
+  }
 
   &__wall {
     position: absolute;
@@ -10,5 +18,13 @@
     right: var(--wall-right);
     top: var(--wall-top);
     bottom: var(--wall-bottom);
+  }
+
+  &__balcony-open {
+    position: absolute;
+    top: var(--wall-border-size);
+    left: percent(180, $plan-design-size);
+    width: percent(200, $plan-design-size);
+    height: percent(40, $plan-design-size);
   }
 }

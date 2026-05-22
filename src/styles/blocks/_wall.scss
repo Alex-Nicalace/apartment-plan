@@ -1,7 +1,8 @@
 @use '../abstracts/functions' as *;
-@use '../abstracts/variables' as *;
+@use '../abstracts/settings' as *;
 
 .wall {
+  --wall-width: var(--wall-width-main);
   position: relative;
   height: var(--wall-width);
   width: var(--wall-length, 100%);
@@ -41,7 +42,7 @@
     height: 100%;
     left: var(--position);
     width: var(--length);
-    background-color: var(--color-page);
+    background-color: var(--color-opening);
     border: var(--wall-border-size) solid var(--color-wall);
     border-top: none;
     border-bottom: none;
@@ -144,6 +145,18 @@
     }
     &_right::after {
       border-right: none;
+    }
+  }
+
+  &_type {
+    &_partition {
+    }
+    &_glass {
+    }
+    &_railing {
+      // height: var(--wall-width);
+      --wall-width: var(--wall-width-railing);
+      background-color: var(--color-opening);
     }
   }
 
