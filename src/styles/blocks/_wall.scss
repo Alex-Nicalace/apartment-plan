@@ -17,6 +17,15 @@
     border: var(--wall-border-size) solid var(--color-wall);
     border-top: none;
     border-bottom: none;
+
+    &_join {
+      &_start {
+        border-left: none;
+      }
+      &_end {
+        border-right: none;
+      }
+    }
   }
 
   &__window {
@@ -173,6 +182,15 @@
         border: var(--wall-border-size) solid var(--color-wall);
         border-left: none;
         border-right: none;
+
+        &_join {
+          &_start {
+            border-top: none;
+          }
+          &_end {
+            border-bottom: none;
+          }
+        }
       }
 
       &__window {
