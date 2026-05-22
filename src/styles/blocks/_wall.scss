@@ -212,6 +212,16 @@
           );
         }
       }
+
+      &__door {
+        &::before {
+          width: percent(30, 19);
+          height: var(--wall-border-size);
+          left: 0;
+          top: 50%;
+          transform: translate(-18%, -50%);
+        }
+      }
     }
   }
 }
