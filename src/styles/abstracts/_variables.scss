@@ -1,17 +1,23 @@
 @use '../abstracts/functions' as *;
-
-$wall-design-width: 19;
-$wall-design-length: 380;
+@use './_settings' as *;
 
 :root {
   --color-page: #f3f3f0;
+  --color-opening: #fff;
   --color-wall: #151716;
   --color-wall-fill: #777b76;
   --color-text: #151515;
 
   --font-primary: Arial, Helvetica, sans-serif;
-  --plan-max-width: #{rem(880)};
+  --plan-max-width: #{rem($plan-max-width)};
   --plan-ratio: 1 / 1;
-  --wall-width: #{fluid-clamp(20, 40)};
+  --wall-width-main: #{fluid-clamp(
+      $wall-design-width,
+      scale-to-max($wall-design-width)
+    )};
+  --wall-width-railing: #{fluid-clamp(
+      $wall-design-width-railing,
+      scale-to-max($wall-design-width-railing)
+    )};
   --wall-border-size: #{rem(2)};
 }

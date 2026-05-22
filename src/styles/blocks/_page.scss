@@ -1,12 +1,9 @@
 @use '../abstracts/functions' as *;
+@use '../abstracts/_settings' as *;
 
 .page {
   min-height: 100svh;
   display: grid;
   place-items: center;
-  padding: rem(24);
-
-  @media (max-width: rem(640)) {
-    padding: rem(12);
-  }
+  padding: rem($padding);
 }
