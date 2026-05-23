@@ -28,5 +28,5 @@
       $wall-design-width-partition,
       scale-to-max($wall-design-width-partition)
     )};
-  --wall-border-size: #{rem(2)};
+  --wall-border-size: #{rem($wall-design-border-size)};
 }

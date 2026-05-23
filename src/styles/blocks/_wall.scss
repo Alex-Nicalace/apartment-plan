@@ -4,6 +4,11 @@
 .wall {
   --wall-width: var(--wall-width-main);
   --wall-color: var(--color-wall-fill);
+  --wall-door-el: #{percent(
+      30,
+      $wall-design-width - 2 * $wall-design-border-size
+    )};
+  --wall-door-el-pos: calc((100% - var(--wall-door-el)) / 2);
   position: relative;
   height: var(--wall-width);
   width: var(--wall-length, 100%);
@@ -87,11 +92,12 @@
     &::before {
       content: '';
       position: absolute;
-      height: percent(30, $wall-design-width);
+      height: var(--wall-door-el);
       width: var(--wall-border-size);
       background-color: var(--color-wall);
       left: 50%;
-      transform: translate(-50%, -18%);
+      top: var(--wall-door-el-pos);
+      transform: translateX(-50%);
       z-index: 1;
     }
   }
@@ -154,6 +160,10 @@
     &_partition {
       --wall-width: var(--wall-width-partition);
       --wall-color: var(--color-opening);
+      --wall-door-el: #{percent(
+          15,
+          $wall-design-width-partition - 2 * $wall-design-border-size
+        )};
     }
     &_glass {
       --wall-width: var(--wall-width-glass);
@@ -285,11 +295,11 @@
 
       &__door {
         &::before {
-          width: percent(30, $wall-design-width);
+          width: var(--wall-door-el);
           height: var(--wall-border-size);
-          left: 0;
+          left: var(--wall-door-el-pos);
           top: 50%;
-          transform: translate(-18%, -50%);
+          transform: translateY(-50%);
         }
       }
 
