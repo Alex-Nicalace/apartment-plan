@@ -44,14 +44,25 @@
     flex-direction: column;
   }
 
-  &__wrap {
+  &__group {
     display: flex;
-    &_1 {
+
+    &_day {
       flex: 0 0 percent(145, 344);
     }
 
-    &_2 {
+    &_private {
       flex: 1;
+    }
+
+    // .floor-plan__group_service
+    &_service {
+      flex: 0 0 percent(165, 344);
+    }
+    // .floor-plan__group_bedrooms
+    &_bedrooms {
+      flex: 1;
+      flex-direction: column;
     }
   }
 
@@ -62,8 +73,12 @@
   &__living {
     flex: 1;
   }
-  &__wall-kl {
-    position: relative;
+
+  &__partition {
     height: calc(100% + var(--wall-border-size));
+  }
+
+  &__bedroom {
+    flex-basis: 50%;
   }
 }

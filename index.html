@@ -26,6 +26,7 @@
               style="--wall-right: 0"
             ></div>
           </div>
+          <!-- Непостредственно площадь квартиры -->
           <div class="floor-plan__inner">
             <!-- Стены несущие (квадрат) -->
             <div
@@ -89,7 +90,7 @@
             </div>
             <!-- Контейнер с комнатами -->
             <div class="floor-plan__rooms">
-              <div class="floor-plan__wrap floor-plan__wrap_1">
+              <div class="floor-plan__group floor-plan__group_day">
                 <div class="room floor-plan__kitchen">
                   <span class="room__dimension room__dimension_top">3,55</span>
                   <span class="room__dimension room__dimension_left">4,76</span>
@@ -99,7 +100,7 @@
                   </div>
                 </div>
                 <div
-                  class="wall wall_vertical wall_join_start wall_join_end wall_join-start-open_top wall_join-end-open_bottom wall_type_partition floor-plan__wall-kl"
+                  class="wall wall_vertical wall_join_start wall_join_end wall_join-start-open_top wall_join-end-open_bottom wall_type_partition floor-plan__partition"
                 ></div>
                 <div class="room floor-plan__living">
                   <span class="room__dimension room__dimension_top">7,82</span>
@@ -115,7 +116,50 @@
               <div
                 class="wall wall_type_partition wall_join_start wall_join_end wall_join-start-open_left wall_join-end-open_right"
               ></div>
-              <div class="floor-plan__wrap floor-plan__wrap_2"></div>
+              <div class="floor-plan__group floor-plan__group_private">
+                <div class="floor-plan__group floor-plan__group_service"></div>
+                <div
+                  class="wall wall_vertical wall_join_start wall_join-start-open_top wall_join_end wall_join-end-open_bottom floor-plan__partition"
+                >
+                  <div
+                    class="wall__door"
+                    style="--position: 20%; --length: 15%"
+                  ></div>
+                  <div
+                    class="wall__door"
+                    style="--position: 52%; --length: 15%"
+                  ></div>
+                </div>
+                <div class="floor-plan__group floor-plan__group_bedrooms">
+                  <div class="room floor-plan__bedroom">
+                    <span class="room__dimension room__dimension_right"
+                      >3,17</span
+                    >
+                    <span class="room__dimension room__dimension_bottom"
+                      >5,53</span
+                    >
+                    <div class="room__content">
+                      <span class="room__name">Спальня</span>
+                      <span class="room__area">17,3</span>
+                    </div>
+                  </div>
+                  <div
+                    class="wall wall_type_partition wall_join_start wall_join-start-open_left wall_join_end wall_join-end-open_right"
+                  ></div>
+                  <div class="room floor-plan__bedroom">
+                    <span class="room__dimension room__dimension_right"
+                      >3,43</span
+                    >
+                    <span class="room__dimension room__dimension_top"
+                      >5,53</span
+                    >
+                    <div class="room__content">
+                      <span class="room__name">Спальня</span>
+                      <span class="room__area">19,0</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="floor-plan__balcony-glazed">
