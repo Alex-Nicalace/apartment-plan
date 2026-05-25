@@ -58,11 +58,18 @@
     // .floor-plan__group_service
     &_service {
       flex: 0 0 percent(165, 344);
+      flex-direction: column;
+      background-color: var(--color-room);
     }
     // .floor-plan__group_bedrooms
     &_bedrooms {
       flex: 1;
       flex-direction: column;
+    }
+
+    // .floor-plan__group_util
+    &_util {
+      flex: 0 0 percent(90, 193);
     }
   }
 
@@ -80,5 +87,51 @@
 
   &__bedroom {
     flex-basis: 50%;
+  }
+
+  // .floor-plan__hall
+  &__hall {
+    flex-grow: 1;
+  }
+  // .floor-plan__bathroom
+  &__bathroom {
+    position: relative;
+    flex: 0 0 percent(85, 165);
+
+    .wall {
+      z-index: 2;
+
+      &:nth-child(1) {
+        width: percent(65, 85);
+      }
+
+      &:nth-child(2) {
+        top: 0;
+        left: percent(66, 85);
+        // right: 0;
+        transform-origin: 0 0;
+        transform: rotate(45deg);
+        width: percent(35, 85);
+      }
+    }
+
+    .room {
+      height: 100%;
+    }
+  }
+  // .floor-plan__wardrobe
+  &__wardrobe {
+    position: relative;
+    height: percent(65, 90);
+    flex-grow: 1;
+    align-self: flex-end;
+
+    .wall {
+      z-index: 1;
+    }
+
+    .room {
+      height: 100%;
+    }
   }
 }
