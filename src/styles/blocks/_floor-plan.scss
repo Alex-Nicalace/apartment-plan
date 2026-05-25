@@ -92,6 +92,10 @@
   // .floor-plan__hall
   &__hall {
     flex-grow: 1;
+
+    .room__dimension_right {
+      top: percent(75, 100);
+    }
   }
   // .floor-plan__bathroom
   &__bathroom {
@@ -132,6 +136,10 @@
 
     .room {
       height: 100%;
+    }
+
+    .room__dimension_right {
+      top: percent(40, 65);
     }
   }
 }

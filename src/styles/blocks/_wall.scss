@@ -160,10 +160,7 @@
     &_partition {
       --wall-width: var(--wall-width-partition);
       --wall-color: var(--color-opening);
-      --wall-door-el: #{percent(
-          15,
-          $wall-design-width-partition - 2 * $wall-design-border-size
-        )};
+      --wall-door-el: #{fluid-clamp(15, scale-to-max(15))};
     }
     &_glass {
       --wall-width: var(--wall-width-glass);
